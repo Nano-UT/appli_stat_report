@@ -52,7 +52,7 @@ for k in range(len(bs[0][0])):
     ave = sum(b_k) / len(b_k)
     dev_square = [(b_k[i] - ave) ** 2 for i in range(len(b_k))]
     unbiased_var = sum(dev_square) / (len(b_k) - 1)
-    std_err_bs.append((unbiased_var / len(b_k)) ** (1/2))
+    std_err_bs.append(unbiased_var ** (1/2))
 
 print("回帰係数の標準誤差: ", *label[1:], " 定数項")
 print(std_err_bs)
